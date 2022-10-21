@@ -1,0 +1,48 @@
+<div class="card-header">
+    <h1 class="text-center">Danh sách Tour du lịch</h1>
+ </div>
+ <div class="container">
+   <div class="row">
+       <div class="col-md-4 mt-3 ">
+           <p style="display: inline">Có {{ tours.length }} tour</p>
+       </div>
+       <!-- <div>Có {{tours.length}} cuốn sách!!</div> -->
+       <div class="col-md-8 ">
+           <button type="button" style="margin-left: 464px;" [routerLink]="['add']"  class="btn btn-success mt-3">
+               Thêm tour
+           </button>
+       </div>
+   </div>
+   <div class="card-body">
+       <table class="table table-bordered">
+           <thead>
+               <tr>
+                   <th>#</th>
+                   <th>Tên sản phẩm</th>
+                   <th>Giá</th>
+                   <th>mô tả</th>
+                   <th>Chức Năng</th>
+               </tr>
+           </thead>
+           <tbody>
+                <tr *ngFor="let tour of tours">             
+                 <td>{{tour.id}}</td>
+                 <td ><a [routerLink]="['show',tour.id]">{{tour.name}}</a></td>
+                 <td >{{tour.price}}</td>
+                 <td>{{tour.description}}</td>
+                   <td class="text-center">
+                       <!-- <button class="btn btn-primary">
+                        <i class="bi bi-eye"></i>
+                       </button> -->
+                       <button class="btn btn-warning mx-2" [routerLink]="['edit',tour.id]"><i class="bi bi-pencil-square"></i>
+                        
+                       </button>
+                       <button class="btn btn-danger" [routerLink]="['delete',tour.id]">
+                        <i class="bi bi-trash3"></i> 
+                       </button>
+                   </td>   
+               </tr>
+           </tbody>
+       </table>
+   </div>
+ </div>

@@ -1,0 +1,28 @@
+<div class="container" style="width: 800px;">
+    <div class="row">
+      <div class="card-header">
+        <h1 class="text-center">Cập nhật Tour</h1>
+      </div>
+      <form *ngIf="TourForm" [formGroup]="TourForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="" class="form-label">Tên sản phẩm</label>
+          <input type="text" class="form-control" formControlName="name" />
+         
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Giá</label>
+          <input type="text" class="form-control" formControlName="price" />
+        
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">mô tả</label>
+            <input type="text" class="form-control" formControlName="description" />
+          
+          </div>
+        <button type="submit" [disabled]="!TourForm.valid"  class="btn btn-success">Lưu</button>
+        <button type="button" [routerLink]="['/tour']" class="btn btn-secondary">Quay Lại</button>
+      </form>
+    </div>
+  </div>
+ Footer
+ © 2022 GitHub, Inc.

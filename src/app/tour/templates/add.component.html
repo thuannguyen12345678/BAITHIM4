@@ -1,0 +1,28 @@
+<p>add works!</p>
+<div class="card-header">
+    <h1>Thêm mới Tour du lịch</h1>
+ </div>
+ <div class="container" style="width: 800px;">
+    <div class="row">
+        <form [formGroup]="tourForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="name" class="form-label">Tên sản phẩm</label>
+                <input type="text" id="name" class="form-control" formControlName="name" />
+                
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">Giá</label>
+                <input type="text" class="form-control" formControlName="price" />
+               
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">mô tả</label>
+                <input type="text" class="form-control" formControlName="description" />
+               
+            </div>
+           
+            <button type="submit"  [disabled]="!tourForm.valid" class="btn btn-success">Lưu</button>
+           <button type="button" [routerLink]="['/tour/']" class="btn btn-danger">Trở Lại</button>
+        </form>
+    </div>
+ </div>

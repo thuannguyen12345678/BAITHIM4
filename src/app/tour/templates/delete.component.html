@@ -1,0 +1,18 @@
+<p>delete works!</p>
+<div class="container" style= "width: 400px;">
+    <div class="row">
+      <div class="card-header">
+        <h1 class= "card-title text-center"><b>Xóa sản phẩm</b></h1>
+ 
+      </div>
+      <div class="card-body">
+         <p> Tên Sản Phẩm: {{tour.name}} </p>
+         <p> Giá: {{tour.price}} </p>
+         <p> Giá: {{tour.description}} </p>
+      </div>
+      <div class="card-footer d-flex justify-content-end">
+        <button type="button" on-click= "delete()" class="btn btn-danger" >Xóa</button>
+        <button type="button" [routerLink]="['']" class="btn btn-primary mx-2" >Quay lại</button>
+      </div>
+    </div>
+  </div> 
